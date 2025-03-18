@@ -4,7 +4,7 @@
 const cloudinaryConfig = {
   cloudName: 'diovja6qr', // À remplacer par votre cloud_name
   uploadPreset: 'ndiambour', // À remplacer par votre upload preset
-  apiKey: '866162872114899', // À remplacer par votre API key
+  apiKey: '265729986184949', // À remplacer par votre API key
   folder: 'ndiambour' // Dossier de destination des images
 };
 
