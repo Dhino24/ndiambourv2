@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Ndiambour Location</title>
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Ndiambour Location"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="vehicles.html">Véhicules</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h1>Contact</h1>
+      <p class="lead mb-0">Nous sommes à votre écoute</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <h2>Contactez-nous</h2>
+          <p class="mb-4">Besoin d'informations sur nos services? Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.</p>
+          
+          <div class="mb-4" id="vehicle-info">
+            <!-- Vehicle info displayed when redirected from a vehicle page -->
+          </div>
+          
+          <form id="contact-form">
+            <div class="mb-3">
+              <label class="form-label">Nom complet</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Téléphone</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Sujet</label>
+              <input type="text" class="form-control" id="subject" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+          </form>
+        </div>
+        
+        <div class="col-lg-1"></div>
+        
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h3 class="mb-4">Informations de contact</h3>
+              
+              <div class="d-flex mb-4">
+                <div class="me-3 text-primary">
+                  <i class="fas fa-map-marker-alt fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Adresse</h5>
+                  <p class="mb-0">Dakar, Sénégal</p>
+                </div>
+              </div>
+              
+              <div class="d-flex mb-4">
+                <div class="me-3 text-primary">
+                  <i class="fas fa-phone-alt fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Téléphone</h5>
+                  <p class="mb-1">+221 77 325 71 97</p>
+                  <p class="mb-1">+221 77 642 64 70</p>
+                  <p class="mb-0">+221 33 854 09 66</p>
+                </div>
+              </div>
+              
+              <div class="d-flex mb-4">
+                <div class="me-3 text-primary">
+                  <i class="fas fa-envelope fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Email</h5>
+                  <p class="mb-0">contact@ndiambourlocation.com</p>
+                </div>
+              </div>
+              
+              <div class="d-flex">
+                <div class="me-3 text-primary">
+                  <i class="fas fa-clock fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Heures d'ouverture</h5>
+                  <p class="mb-1">Lundi - Vendredi: 8h - 18h</p>
+                  <p class="mb-0">Samedi: 9h - 16h</p>
+                </div>
+              </div>
+              
+              <div class="mt-4 pt-4 border-top">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123857.68869165694!2d-17.544239965805018!3d14.727029495028001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5bb71%3A0xb17c17d92d5db21f!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2sfr!4v1616693228261!5m2!1sfr!2sfr" 
+                  width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-logo">
+            <img src="assets/img/logo.png" alt="Ndiambour Location">
+            <p>Des voitures neuves et confortables pour vos déplacements au Sénégal.</p>
+          </div>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Navigation</h5>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="vehicles.html">Véhicules</a></li>
+              <li><a href="about.html">À propos</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#">Location</a></li>
+              <li><a href="#">Vente</a></li>
+              <li><a href="#">Chauffeur</a></li>
+              <li><a href="#">Tourisme</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <div class="footer-links">
+            <h5>Contact</h5>
+            <ul>
+              <li><i class="fas fa-map-marker-alt me-2"></i> Dakar, Sénégal</li>
+              <li><i class="fas fa-phone me-2"></i> +221 77 325 71 97</li>
+              <li><i class="fas fa-envelope me-2"></i> contact@ndiambourlocation.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <p class="mb-0">&copy; 2025 Ndiambour Location. Tous droits réservés. NINEA: 26979122C2 - RC: SN-DKR-2007-B-2703</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

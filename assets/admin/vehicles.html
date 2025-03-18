@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Gestion des Véhicules | Ndiambour Location</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-white border-end" id="sidebar-wrapper">
+      <div class="sidebar-heading p-3 border-bottom">
+        <img src="../assets/img/logo.png" alt="Ndiambour Location" height="40">
+        <span class="ms-2 fw-bold">Admin Panel</span>
+      </div>
+      <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action p-3" href="index.html">
+          <i class="fas fa-tachometer-alt me-2"></i> Tableau de bord
+        </a>
+        <a class="list-group-item list-group-item-action p-3 active" href="vehicles.html">
+          <i class="fas fa-car me-2"></i> Véhicules
+        </a>
+        <a class="list-group-item list-group-item-action p-3" href="reservations.html">
+          <i class="fas fa-calendar-check me-2"></i> Réservations
+        </a>
+        <a class="list-group-item list-group-item-action p-3" href="contacts.html">
+          <i class="fas fa-address-book me-2"></i> Contacts
+        </a>
+        <a class="list-group-item list-group-item-action p-3" href="../index.html" target="_blank">
+          <i class="fas fa-eye me-2"></i> Voir le site
+        </a>
+      </div>
+    </div>
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-sm btn-primary" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="ms-auto">
+            <div class="dropdown">
+              <a class="dropdown-toggle text-decoration-none text-dark" href="#" role="button" data-bs-toggle="dropdown">
+                <i class="fas fa-user-circle me-1"></i> Admin
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profil</a></li>
+                <li><a class="dropdown-item" href="#">Paramètres</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../login.html">Déconnexion</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Main content -->
+      <div class="container-fluid p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1 class="h2 mb-0">Gestion des Véhicules</h1>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
+            <i class="fas fa-plus me-1"></i> Ajouter un véhicule
+          </button>
+        </div>
+        
+        <!-- Info cards -->
+        <div class="row mb-4">
+          <div class="col-md-3 mb-3 mb-md-0">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body d-flex">
+                <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                  <i class="fas fa-car text-primary fa-2x"></i>
+                </div>
+                <div>
+                  <h6 class="text-muted mb-1">Total Véhicules</h6>
+                  <h4 class="mb-0" id="total-vehicles">--</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3 mb-md-0">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body d-flex">
+                <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                  <i class="fas fa-tags text-success fa-2x"></i>
+                </div>
+                <div>
+                  <h6 class="text-muted mb-1">À Vendre</h6>
+                  <h4 class="mb-0" id="sale-vehicles">--</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3 mb-md-0">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body d-flex">
+                <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                  <i class="fas fa-key text-info fa-2x"></i>
+                </div>
+                <div>
+                  <h6 class="text-muted mb-1">À Louer</h6>
+                  <h4 class="mb-0" id="rent-vehicles">--</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body d-flex">
+                <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                  <i class="fas fa-exclamation-triangle text-warning fa-2x"></i>
+                </div>
+                <div>
+                  <h6 class="text-muted mb-1">Indisponibles</h6>
+                  <h4 class="mb-0" id="unavailable-vehicles">--</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vehicles table -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <table id="vehicles-table" class="table table-striped" style="width:100%">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Image</th>
+                  <th>Marque & Modèle</th>
+                  <th>Type</th>
+                  <th>Année</th>
+                  <th>Prix Vente</th>
+                  <th>Prix Location</th>
+                  <th>Disponibilité</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data will be loaded via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Vehicle Modal -->
+  <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ajouter un Véhicule</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="vehicle-form">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Marque</label>
+                <input type="text" class="form-control" id="brand" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Modèle</label>
+                <input type="text" class="form-control" id="model" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label class="form-label">Type</label>
+                <select class="form-select" id="type" required>
+                  <option value="">Sélectionner</option>
+                  <option value="sedan">Berline</option>
+                  <option value="suv">SUV</option>
+                  <option value="luxury">Luxe</option>
+                  <option value="van">Minivan</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label">Année</label>
+                <input type="number" class="form-control" id="year" required min="2000" max="2025">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label">Couleur</label>
+                <input type="text" class="form-control" id="color" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Prix Vente (FCFA)</label>
+                <input type="number" class="form-control" id="sale-price" min="0">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Prix Location/jour (FCFA)</label>
+                <input type="number" class="form-control" id="rent-price" min="0">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Kilométrage</label>
+                <input type="number" class="form-control" id="mileage" min="0">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Carburant</label>
+                <select class="form-select" id="fuel">
+                  <option value="essence">Essence</option>
+                  <option value="diesel">Diesel</option>
+                  <option value="hybride">Hybride</option>
+                  <option value="electrique">Électrique</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label class="form-label">Transmission</label>
+                <select class="form-select" id="transmission">
+                  <option value="automatique">Automatique</option>
+                  <option value="manuelle">Manuelle</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label">Sièges</label>
+                <input type="number" class="form-control" id="seats" min="2" max="15">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label">Disponibilité</label>
+                <select class="form-select" id="availability">
+                  <option value="both">Vente et Location</option>
+                  <option value="sale">Vente uniquement</option>
+                  <option value="rent">Location uniquement</option>
+                  <option value="unavailable">Indisponible</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Caractéristiques</label>
+              <div class="row">
+                <div class="col-md-4 mb-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature-ac">
+                    <label class="form-check-label" for="feature-ac">Climatisation</label>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature-bluetooth">
+                    <label class="form-check-label" for="feature-bluetooth">Bluetooth</label>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature-gps">
+                    <label class="form-check-label" for="feature-gps">GPS</label>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature-usb">
+                    <label class="form-check-label" for="feature-usb">Ports USB</label>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature-camera">
+                    <label class="form-check-label" for="feature-camera">Caméra de recul</label>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature-airbags">
+                    <label class="form-check-label" for="feature-airbags">Airbags</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Images du véhicule</label>
+              <div class="dropzone-container border rounded p-3 text-center" id="dropzone">
+                <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-2"></i>
+                <p class="mb-0">Cliquez ou glissez-déposez vos images ici</p>
+                <small class="text-muted d-block mt-1">Jusqu'à 5 images, max 2MB chacune</small>
+                <div id="preview-container" class="d-flex flex-wrap gap-2 mt-3"></div>
+                <div class="mt-2">
+                  <button type="button" id="upload-btn" class="btn btn-sm btn-primary">
+                    <i class="fas fa-upload me-1"></i> Télécharger
+                  </button>
+                </div>
+              </div>
+              <input type="hidden" id="vehicle-images" name="images">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary" id="save-vehicle">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Vehicle Modal - Similar structure to Add Vehicle Modal -->
+  <div class="modal fade" id="editVehicleModal" tabindex="-1" aria-hidden="true">
+    <!-- Similar structure to Add Vehicle Modal -->
+  </div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- DataTables -->
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  <!-- Cloudinary -->
+  <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/cloudinary.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script src="../assets/js/vehicles.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* Mobile - Small (< 576px) */
+@media (max-width: 575.98px) {
+  .hero {
+    height: 60vh;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+  }
+  
+  .filter-form .form-group {
+    min-width: 100%;
+  }
+  
+  .vehicle-features {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  .footer-links h5::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile - Medium (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .filter-section {
+    padding: 1.5rem 0;
+  }
+  
+  .filter-form {
+    gap: 0.75rem;
+  }
+  
+  .filter-form .form-group {
+    min-width: 45%;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero {
+    height: 70vh;
+  }
+  
+  .filter-form .form-group {
+    min-width: 200px;
+  }
+}
+
+/* Animation pour transition fluide */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}

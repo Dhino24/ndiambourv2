@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Ndiambour Location</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(rgba(15, 59, 127, 0.8), rgba(15, 59, 127, 0.9)), url('assets/img/pattern-bg.svg');
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-card {
+      max-width: 400px;
+      width: 100%;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      padding: 40px 30px;
+    }
+    .login-logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .login-logo img {
+      max-height: 60px;
+    }
+    .btn-primary {
+      background-color: #0F3B7F;
+      border-color: #0F3B7F;
+      box-shadow: 0 4px 6px rgba(15, 59, 127, 0.2);
+      transition: all 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #4682B4;
+      border-color: #4682B4;
+      transform: translateY(-2px);
+    }
+    .form-control:focus {
+      border-color: #0F3B7F;
+      box-shadow: 0 0 0 0.25rem rgba(15, 59, 127, 0.25);
+    }
+    .pwd-visibility {
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="login-card">
+          <div class="login-logo">
+            <img src="assets/img/logo.png" alt="Ndiambour Location">
+            <h4 class="mt-3 mb-0">Administration</h4>
+          </div>
+          
+          <form id="login-form">
+            <div class="alert alert-danger d-none" id="login-error">
+              Identifiants incorrects. Veuillez réessayer.
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label">Nom d'utilisateur</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" id="username" required>
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <label class="form-label">Mot de passe</label>
+              <div class="input-group position-relative">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control" id="password" required>
+                <i class="fas fa-eye pwd-visibility" id="toggle-password"></i>
+              </div>
+            </div>
+            
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary py-2">Se connecter</button>
+            </div>
+            
+            <div class="text-center mt-3">
+              <a href="index.html" class="text-decoration-none">Retourner au site</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle password visibility
+      document.getElementById('toggle-password').addEventListener('click', function() {
+        const pwdInput = document.getElementById('password');
+        const type = pwdInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        pwdInput.setAttribute('type', type);
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+      });
+      
+      // Form submission
+      document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        // Demo credentials (in production, this should be server-side)
+        if (username === 'admin' && password === 'admin123') {
+          window.location.href = 'admin/index.html';
+        } else {
+          document.getElementById('login-error').classList.remove('d-none');
+          // Hide error after 3 seconds
+          setTimeout(() => {
+            document.getElementById('login-error').classList.add('d-none');
+          }, 3000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

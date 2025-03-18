@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Véhicules - Ndiambour Location</title>
+  <meta name="description" content="Découvrez notre gamme de véhicules neufs et confortables disponibles à la vente et à la location au Sénégal.">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo.png" alt="Ndiambour Location">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="vehicles.html">Nos Véhicules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h1>Nos Véhicules</h1>
+      <p class="lead mb-0">Trouvez le véhicule parfait pour vos besoins</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <form id="filter-form" class="filter-form">
+            <div class="form-group">
+              <label for="type">Type de véhicule</label>
+              <select id="type" class="form-select">
+                <option value="">Tous les types</option>
+                <option value="sedan">Berline</option>
+                <option value="suv">SUV</option>
+                <option value="luxury">Luxe</option>
+                <option value="van">Minivan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="brand">Marque</label>
+              <select id="brand" class="form-select">
+                <option value="">Toutes les marques</option>
+                <!-- Options will be loaded by JS -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="price-min">Prix min.</label>
+              <input type="number" id="price-min" class="form-control" placeholder="Min">
+            </div>
+            <div class="form-group">
+              <label for="price-max">Prix max.</label>
+              <input type="number" id="price-max" class="form-control" placeholder="Max">
+            </div>
+            <div class="form-group">
+              <label for="availability">Disponibilité</label>
+              <select id="availability" class="form-select">
+                <option value="">Tous</option>
+                <option value="sale">À vendre</option>
+                <option value="rent">À louer</option>
+              </select>
+            </div>
+            <div class="form-group d-flex align-items-end">
+              <button type="submit" class="btn btn-primary w-100">Filtrer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vehicles Grid -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <p id="results-count" class="mb-0">Affichage de <span>0</span> véhicules</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="d-flex justify-content-md-end">
+            <select id="sort-by" class="form-select" style="width: auto;">
+              <option value="default">Trier par défaut</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="name-asc">Nom (A-Z)</option>
+              <option value="name-desc">Nom (Z-A)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="vehicles-grid">
+        <!-- Vehicles will be loaded here by JS -->
+        <div class="col-12 text-center py-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Chargement...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <nav aria-label="Pagination">
+        <ul class="pagination justify-content-center" id="pagination">
+          <!-- Pagination will be generated by JS -->
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-logo">
+            <img src="assets/img/logo.png" alt="Ndiambour Location">
+            <p>Des voitures neuves et confortables pour tous vos déplacements au Sénégal.</p>
+          </div>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Navigation</h5>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="vehicles.html">Nos Véhicules</a></li>
+              <li><a href="about.html">À propos</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#">Location de Voitures</a></li>
+              <li><a href="#">Vente de Véhicules</a></li>
+              <li><a href="#">Service Chauffeur</a></li>
+              <li><a href="#">Circuits Touristiques</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <div class="footer-links">
+            <h5>Contact</h5>
+            <ul>
+              <li><i class="fas fa-map-marker-alt me-2"></i> Dakar, Sénégal</li>
+              <li><i class="fas fa-phone me-2"></i> +221 77 325 71 97</li>
+              <li><i class="fas fa-envelope me-2"></i> contact@ndiambourlocation.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <p class="mb-0">&copy; 2025 Ndiambour Location. Tous droits réservés. NINEA: 26979122C2 - RC: SN-DKR-2007-B-2703</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vehicle Detail Modal -->
+  <div class="modal fade" id="vehicle-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-vehicle-title">Détails du véhicule</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body" id="modal-vehicle-details">
+          <!-- Vehicle details will be loaded here by JS -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <a href="contact.html" id="reserve-btn" class="btn btn-primary">Réserver / Contacter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Cloudinary -->
+  <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/cloudinary.js"></script>
+  <script src="assets/js/vehicles.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
