@@ -3,6 +3,9 @@ let vehicles = JSON.parse(localStorage.getItem('vehicles') || '[]');
 const ITEMS_PER_PAGE = 9;
 let currentPage = 1, filteredVehicles = [];
 
+// Fonction de formatage utilisée dans plusieurs fonctions - déclarée globalement
+const fmt = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
 document.addEventListener('DOMContentLoaded', () => {
   // Init selon page courante
   const el = id => document.getElementById(id);
@@ -142,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const {id, brand, model, year, images, availability, salePrice, rentPrice, fuel, transmission, seats} = vehicle;
     const isRent = availability === 'rent' || availability === 'both';
     const isSale = availability === 'sale' || availability === 'both';
-    const fmt = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     
     return `
       <div class="col-md-6 col-lg-4 mb-4">
@@ -179,7 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const isRent = v.availability === 'rent' || v.availability === 'both';
     const isSale = v.availability === 'sale' || v.availability === 'both';
-    const fmt = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     
     // Features
     let features = '';
@@ -562,7 +563,4 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     localStorage.setItem('vehicles', JSON.stringify(vehicles));
   }
-
-  // Utilitaires
-  const fmt = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 });
