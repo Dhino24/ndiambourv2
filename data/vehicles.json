@@ -2,44 +2,14 @@
   "vehicles": [
     {
       "id": "v001",
-      "brand": "Toyota",
-      "model": "RAV4",
+      "brand": "Nissan",
+      "model": "Qashqai",
       "type": "suv",
-      "year": 2021,
-      "color": "Bleu",
-      "salePrice": 32000000,
-      "rentPrice": 75000,
-      "mileage": 12000,
-      "fuel": "Hybride",
-      "transmission": "Automatique",
-      "seats": 5,
-      "availability": "sale",
-      "features": {
-        "ac": true,
-        "bluetooth": true,
-        "gps": true,
-        "usb": true,
-        "camera": true,
-        "airbags": true
-      },
-      "description": "SUV hybride moderne combinant efficacité énergétique et performances. Idéal pour les clients soucieux de l'environnement.",
-      "images": [
-        "https://images.unsplash.com/photo-1581540222934-8705d7382f7b",
-        "https://images.unsplash.com/photo-1549275301-c9215c8084b0"
-      ],
-      "featured": true,
-      "createdAt": "2025-03-05T16:20:00.000Z"
-    },
-    {
-      "id": "v002",
-      "brand": "Renault",
-      "model": "Captur",
-      "type": "suv",
-      "year": 2020,
-      "color": "Orange",
-      "salePrice": 18000000,
-      "rentPrice": 45000,
-      "mileage": 25000,
+      "year": 2022,
+      "color": "Gris",
+      "salePrice": 28000000,
+      "rentPrice": 65000,
+      "mileage": 15000,
       "fuel": "Essence",
       "transmission": "Automatique",
       "seats": 5,
@@ -52,25 +22,53 @@
         "camera": true,
         "airbags": true
       },
-      "description": "SUV compact urbain mêlant design attrayant et polyvalence quotidienne. Idéal pour la ville et les escapades du week-end.",
+      "description": "SUV compact moderne avec un design élégant et une consommation économique. Idéal pour la ville et les escapades du week-end.",
       "images": [
-        "https://images.pexels.com/photos/13137414/pexels-photo-13137414.jpeg",
-        "https://images.pexels.com/photos/13137424/pexels-photo-13137424.jpeg"
+        "../img/qashqai.jpg"
+      ],
+      "featured": true,
+      "createdAt": "2025-03-05T16:20:00.000Z"
+    },
+    {
+      "id": "v002",
+      "brand": "Renault",
+      "model": "Duster",
+      "type": "suv",
+      "year": 2021,
+      "color": "Blanc",
+      "salePrice": 18000000,
+      "rentPrice": 45000,
+      "mileage": 25000,
+      "fuel": "Diesel",
+      "transmission": "Manuelle",
+      "seats": 5,
+      "availability": "sale",
+      "features": {
+        "ac": true,
+        "bluetooth": true,
+        "gps": true,
+        "usb": true,
+        "camera": true,
+        "airbags": true
+      },
+      "description": "SUV compact et économique, idéal pour les terrains difficiles. Robuste et polyvalent pour tous vos déplacements.",
+      "images": [
+        "../img/duster.jpg"
       ],
       "featured": true,
       "createdAt": "2025-02-15T10:05:00.000Z"
     },
     {
       "id": "v003",
-      "brand": "Peugeot",
-      "model": "3008",
+      "brand": "Renault",
+      "model": "Captur",
       "type": "suv",
-      "year": 2019,
-      "color": "Gris",
-      "salePrice": 24000000,
+      "year": 2022,
+      "color": "Blanc",
+      "salePrice": 22000000,
       "rentPrice": 55000,
-      "mileage": 22000,
-      "fuel": "Diesel",
+      "mileage": 12000,
+      "fuel": "Essence",
       "transmission": "Automatique",
       "seats": 5,
       "availability": "sale",
@@ -82,57 +80,55 @@
         "camera": true,
         "airbags": true
       },
-      "description": "SUV compact au design distinctif et intérieur innovant. Un i-Cockpit futuriste et une conduite confortable et économique.",
+      "description": "SUV urbain élégant avec des finitions modernes. Design attrayant et confort optimal pour tous vos déplacements en ville.",
       "images": [
-        "https://images.pexels.com/photos/11292755/pexels-photo-11292755.jpeg",
-        "https://images.pexels.com/photos/11292756/pexels-photo-11292756.jpeg"
+        "../img/captur.jpg"
       ],
       "featured": true,
       "createdAt": "2025-02-05T16:30:00.000Z"
     },
     {
       "id": "v004",
-      "brand": "Ford",
-      "model": "Transit",
-      "type": "utility",
-      "year": 2022,
-      "color": "Blanc",
-      "salePrice": 28000000,
-      "rentPrice": 65000,
-      "mileage": 15000,
+      "brand": "Toyota",
+      "model": "Land Cruiser Prado",
+      "type": "suv",
+      "year": 2021,
+      "color": "Noir",
+      "salePrice": 65000000,
+      "rentPrice": 150000,
+      "mileage": 10000,
       "fuel": "Diesel",
-      "transmission": "Manuelle",
-      "seats": 3,
+      "transmission": "Automatique",
+      "seats": 7,
       "availability": "sale",
       "features": {
         "ac": true,
         "bluetooth": true,
-        "gps": false,
+        "gps": true,
         "usb": true,
         "camera": true,
         "airbags": true
       },
-      "description": "Véhicule utilitaire spacieux et fiable. Volume de chargement impressionnant et grande polyvalence pour tous vos besoins professionnels.",
+      "description": "SUV haut de gamme avec d'excellentes capacités tout-terrain. Spacieux, luxueux et fiable pour vos voyages les plus exigeants.",
       "images": [
-        "https://images.pexels.com/photos/2118176/pexels-photo-2118176.jpeg",
-        "https://images.unsplash.com/photo-1600661653561-629509216270"
+        "../img/prado.jpg"
       ],
-      "featured": false,
-      "createdAt": "2025-03-10T14:15:00.000Z"
+      "featured": true,
+      "createdAt": "2025-03-01T11:45:00.000Z"
     },
     {
       "id": "v005",
-      "brand": "Tatra",
-      "model": "T815-7",
-      "type": "8x8",
-      "year": 2018,
-      "color": "Vert militaire",
+      "brand": "Toyota",
+      "model": "RAV4",
+      "type": "suv",
+      "year": 2020,
+      "color": "Gris",
       "salePrice": null,
-      "rentPrice": 250000,
-      "mileage": 5000,
-      "fuel": "Diesel",
+      "rentPrice": 85000,
+      "mileage": 20000,
+      "fuel": "Essence",
       "transmission": "Automatique",
-      "seats": 6,
+      "seats": 5,
       "availability": "rent",
       "features": {
         "ac": true,
@@ -142,13 +138,12 @@
         "camera": true,
         "airbags": true
       },
-      "description": "Véhicule tout-terrain extrême 8x8 avec capacités exceptionnelles en conditions difficiles. Parfait pour les expéditions et travaux spéciaux.",
+      "description": "SUV fiable et efficace, disponible uniquement en location. Parfait pour vos déplacements occasionnels et voyages d'affaires.",
       "images": [
-        "https://images.pexels.com/photos/2407202/pexels-photo-2407202.jpeg",
-        "https://images.unsplash.com/photo-1531418871581-f7750e588667"
+        "../img/rav4.jpg"
       ],
-      "featured": true,
-      "createdAt": "2025-03-01T11:45:00.000Z"
+      "featured": false,
+      "createdAt": "2025-02-28T13:40:00.000Z"
     }
   ]
 }
