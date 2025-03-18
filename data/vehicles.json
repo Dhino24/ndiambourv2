@@ -111,7 +111,7 @@
       },
       "description": "SUV haut de gamme avec d'excellentes capacités tout-terrain. Spacieux, luxueux et fiable pour vos voyages les plus exigeants.",
       "images": [
-        "../img/prado.jpg"
+        "../img/prado.png"
       ],
       "featured": true,
       "createdAt": "2025-03-01T11:45:00.000Z"
@@ -140,7 +140,7 @@
       },
       "description": "SUV fiable et efficace, disponible uniquement en location. Parfait pour vos déplacements occasionnels et voyages d'affaires.",
       "images": [
-        "../img/rav4.jpg"
+        "../img/rav4.png"
       ],
       "featured": false,
       "createdAt": "2025-02-28T13:40:00.000Z"
